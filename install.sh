@@ -7,7 +7,7 @@ error_exit() {
     exit 1
 }
 
-REPO_URL="https://github.com/your-org/tunex"
+REPO_URL="https://github.com/Reward0/tunex_server"
 INSTALL_DIR="/opt/tunex"
 LOG_DIR="/var/log/tunex"
 CONFIG_DIR="/etc/tunex"
@@ -79,14 +79,14 @@ mkdir -p /var/lib/tunex
 chown -R "$SERVICE_USER":"$SERVICE_USER" /var/lib/tunex "$LOG_DIR"
 
 # ─────────────────────────────────────────────
-STAGE="Installing tunex from GitHub"
-echo "Cloning repository..."
-if [ -d "$INSTALL_DIR/.git" ]; then
-    echo "Repository already exists, pulling latest changes..."
-    git -C "$INSTALL_DIR" pull
-else
-    git clone "$REPO_URL" "$INSTALL_DIR"
-fi
+#STAGE="Installing tunex from GitHub"
+#echo "Cloning repository..."
+#if [ -d "$INSTALL_DIR/.git" ]; then
+#    echo "Repository already exists, pulling latest changes..."
+#    git -C "$INSTALL_DIR" pull
+#else
+#    GIT_TERMINAL_PROMPT=0 git clone --depth 1 "$REPO_URL" "$INSTALL_DIR"
+#fi
 
 # ─────────────────────────────────────────────
 STAGE="Installing Python dependencies"
